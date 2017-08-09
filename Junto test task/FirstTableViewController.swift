@@ -7,8 +7,41 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class FirstTableViewController: UITableViewController {
+    
+    typealias downloadNewsCompletion = () -> Void
+    
+    func downloadWeather(city: City, completion: @escaping downloadNewsCompletion) {
+        Alamofire.request(Router.getNews(access_token: "591f99547f569b05ba7d8777e2e0824eea16c440292cce1f8dfb3952cc9937ff")).responseJSON { [weak self] response in
+            switch response.result {
+            case .success(let rawJson):
+                self?.parseNewsFromJson(rawJson: rawJson)
+                completion()
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    private func parseNewsFromJson(rawJson: Any) {
+        let json = JSON(rawJson)
+        print(json)
+        //let jsonArray = json["list"]
+        //for (_, item) in jsonArray {
+        var newsArray = [News]()
+        for (_, subJson):(String, JSON) in json["list"] {
+            
+            if  let addWeather = Weather(subJson) {
+                weatherArray.append(addWeather)
+            }
+            
+        }
+        
+    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()

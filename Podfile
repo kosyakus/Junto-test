@@ -7,6 +7,7 @@ target 'Junto test task' do
 
 pod 'RealmSwift'
 pod 'SwiftyJSON'
+pod 'Alamofire', '~> 4.4'
 
   # Pods for Junto test task
 
