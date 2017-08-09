@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01E9775B39A7C101BC9374FE /* Pods_Junto_test_task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAF444CDA05C7A6BA7EDF49 /* Pods_Junto_test_task.framework */; };
 		84A2E4381F3B1DDE00C29438 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2E4371F3B1DDE00C29438 /* AppDelegate.swift */; };
 		84A2E43A1F3B1DDE00C29438 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2E4391F3B1DDE00C29438 /* ViewController.swift */; };
 		84A2E43D1F3B1DDE00C29438 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A2E43B1F3B1DDE00C29438 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		124D1F7499E8BC7735FB0BB4 /* Pods-Junto test task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Junto test task.release.xcconfig"; path = "Pods/Target Support Files/Pods-Junto test task/Pods-Junto test task.release.xcconfig"; sourceTree = "<group>"; };
 		84A2E4341F3B1DDE00C29438 /* Junto test task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Junto test task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A2E4371F3B1DDE00C29438 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84A2E4391F3B1DDE00C29438 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		84A2E4411F3B1DDE00C29438 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84A2E4431F3B1DDE00C29438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84A2E4491F3B220F00C29438 /* FirstTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTableViewController.swift; sourceTree = "<group>"; };
+		88063DDBB40640BA9F548727 /* Pods-Junto test task.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Junto test task.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Junto test task/Pods-Junto test task.debug.xcconfig"; sourceTree = "<group>"; };
+		CEAF444CDA05C7A6BA7EDF49 /* Pods_Junto_test_task.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Junto_test_task.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01E9775B39A7C101BC9374FE /* Pods_Junto_test_task.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58671F97A63D7981FE5EEEAB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CEAF444CDA05C7A6BA7EDF49 /* Pods_Junto_test_task.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		84A2E42B1F3B1DDE00C29438 = {
 			isa = PBXGroup;
 			children = (
 				84A2E4361F3B1DDE00C29438 /* Junto test task */,
 				84A2E4351F3B1DDE00C29438 /* Products */,
+				D2BCE0BA152D212C387929BD /* Pods */,
+				58671F97A63D7981FE5EEEAB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +82,15 @@
 			path = "Junto test task";
 			sourceTree = "<group>";
 		};
+		D2BCE0BA152D212C387929BD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				88063DDBB40640BA9F548727 /* Pods-Junto test task.debug.xcconfig */,
+				124D1F7499E8BC7735FB0BB4 /* Pods-Junto test task.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84A2E4461F3B1DDE00C29438 /* Build configuration list for PBXNativeTarget "Junto test task" */;
 			buildPhases = (
+				A5D12B183FC0B5BB5B5235DE /* [CP] Check Pods Manifest.lock */,
 				84A2E4301F3B1DDE00C29438 /* Sources */,
 				84A2E4311F3B1DDE00C29438 /* Frameworks */,
 				84A2E4321F3B1DDE00C29438 /* Resources */,
+				237BE54E028B2148EEDF2E32 /* [CP] Embed Pods Frameworks */,
+				58EAAC80DE300B399095BBE9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -133,6 +160,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		237BE54E028B2148EEDF2E32 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Junto test task/Pods-Junto test task-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		58EAAC80DE300B399095BBE9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Junto test task/Pods-Junto test task-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5D12B183FC0B5BB5B5235DE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		84A2E4301F3B1DDE00C29438 /* Sources */ = {
@@ -262,6 +337,7 @@
 		};
 		84A2E4471F3B1DDE00C29438 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88063DDBB40640BA9F548727 /* Pods-Junto test task.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Junto test task/Info.plist";
@@ -275,6 +351,7 @@
 		};
 		84A2E4481F3B1DDE00C29438 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 124D1F7499E8BC7735FB0BB4 /* Pods-Junto test task.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Junto test task/Info.plist";
