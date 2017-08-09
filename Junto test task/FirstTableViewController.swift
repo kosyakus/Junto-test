@@ -12,39 +12,68 @@ import SwiftyJSON
 
 class FirstTableViewController: UITableViewController {
     
-    typealias downloadNewsCompletion = () -> Void
+    var refresher: UIRefreshControl!
     
-    func downloadWeather(city: City, completion: @escaping downloadNewsCompletion) {
+    func refresh(){
+        
+        print("refreshed")
+        DispatchQueue.main.async{
+            self.tableView.reloadData()
+        }
+        
+        self.refresher.endRefreshing()
+        
+    }
+
+    
+    var newsDate = [News]()
+    
+    func downloadNews() -> [News] {//news: News) -> [News] {
+        
+        var newsArray = [News]()
         Alamofire.request(Router.getNews(access_token: "591f99547f569b05ba7d8777e2e0824eea16c440292cce1f8dfb3952cc9937ff")).responseJSON { [weak self] response in
+            
             switch response.result {
             case .success(let rawJson):
-                self?.parseNewsFromJson(rawJson: rawJson)
-                completion()
+                if let newsArrayFromJson = self?.parseNewsFromJson(rawJson: rawJson) {
+                    newsArray = newsArrayFromJson
+                }
+                //completion()
             case .failure(let error):
                 print(error)
             }
         }
+        return newsArray
     }
     
-    private func parseNewsFromJson(rawJson: Any) {
+    private func parseNewsFromJson(rawJson: Any) -> [News] {
         let json = JSON(rawJson)
         print(json)
         //let jsonArray = json["list"]
         //for (_, item) in jsonArray {
         var newsArray = [News]()
-        for (_, subJson):(String, JSON) in json["list"] {
+        for (_, subJson):(String, JSON) in json["posts"] {
             
-            if  let addWeather = Weather(subJson) {
-                weatherArray.append(addWeather)
+            if  let addNews = News(subJson) {
+                newsArray.append(addNews)
             }
             
         }
-        
+        return newsArray
     }
 
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        newsDate = downloadNews()
+        tableView.reloadData()
+        
+       /* weatherService.downloadWeather(city: city) { [weak self] in
+            self?.weatherDate = self?.weatherService.showWeather() ?? []
+            self?.tableView.reloadData()
+        }*/
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -62,23 +91,24 @@ class FirstTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        newsDate = downloadNews()
+        return newsDate.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath)
 
-        // Configure the cell...
+        
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

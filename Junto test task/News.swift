@@ -12,25 +12,32 @@ import SwiftyJSON
 
 class News: Object {
     
-    dynamic var temperature: Double = 0.0
-    dynamic var date: String = ""
+    dynamic var name: String = ""
     dynamic var descr: String = ""
-    dynamic var icon: String = ""
+    dynamic var upvotes: Int = 0
+    dynamic var thumbnail: String = ""
+    dynamic var url: String = ""
+    dynamic var screenShot: String = ""
     
     convenience init?(_ json: JSON) {
         
         guard
-            let temperature = json["main"]["temp"].double,
-            let date = json["dt_txt"].string,
-            let descr = json["weather"][0]["description"].string,
-            let icon = json["weather"][0]["icon"].string
+            let name = json["name"].string,
+            let descr = json["tagline"].string,
+            let upvotes = json["votes_count"].int,
+            let thumbnail = json["thumbnail"]["image_url"].string,
+            let url = json["discussion_url"].string,
+            let screenShot = json["screenshot_url"]["850px"].string
             else { return nil }
         
         self.init()
-        self.temperature = temperature
-        self.date = date
+        self.name = name
         self.descr = descr
-        self.icon = "http://openweathermap.org/img/w/" + icon + ".png"
+        self.upvotes = upvotes
+        self.thumbnail = thumbnail
+        self.url = url
+        self.screenShot = screenShot
+        
         
     }
     
