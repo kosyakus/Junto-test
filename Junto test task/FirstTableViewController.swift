@@ -30,26 +30,25 @@ class FirstTableViewController: UITableViewController {
     
     typealias downloadNewsCompletion = () -> Void
     
-    func downloadNews(completion: @escaping (_ success: Bool) -> Void) -> [News] {
+    func downloadNews(completion: @escaping (_ success: Bool) -> Void) {
         
-        var newsArray = [News]()
+        //var newsArray = [News]()
         Alamofire.request(Router.getNews(access_token: "591f99547f569b05ba7d8777e2e0824eea16c440292cce1f8dfb3952cc9937ff")).responseJSON { [weak self] response in
             
             switch response.result {
             case .success(let rawJson):
                 if let newsArrayFromJson = self?.parseNewsFromJson(rawJson: rawJson) {
-                    newsArray = newsArrayFromJson
+                    self?.newsDate = newsArrayFromJson
                     //print(newsArray)
                 }
                 completion(true)
-                /*DispatchQueue.main.async() {
+                DispatchQueue.main.async() {
                     self?.tableView.reloadData()
-                }*/
+                }
             case .failure(let error):
                 print(error)
             }
         }
-        return newsArray
     }
     
     private func parseNewsFromJson(rawJson: Any) -> [News] {
@@ -80,7 +79,7 @@ class FirstTableViewController: UITableViewController {
         self.tableView.addSubview(refresher)
         refresh()
         
-        newsDate = self.downloadNews() { (success) in
+        self.downloadNews() { (success) in
             if success {
                 DispatchQueue.main.async() {
                     self.tableView.reloadData()

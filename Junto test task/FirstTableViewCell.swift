@@ -2,18 +2,22 @@
 //  FirstTableViewCell.swift
 //  Junto test task
 //
-//  Created by Admin on 09.08.17.
+//  Created by Admin on 10.08.17.
 //  Copyright © 2017 NS. All rights reserved.
 //
 
 import UIKit
 
 class FirstTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var thumbnail: UIImageView!
+    
+    
     @IBOutlet weak var name: UILabel!
+    
+    @IBOutlet weak var thumbnail: UIImageView!
+    
     @IBOutlet weak var descrip: UILabel!
     @IBOutlet weak var votesCount: UILabel!
+    
     
     
     

@@ -26,7 +26,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="87"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DeG-nO-FwL">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DeG-nO-FwL">
                                             <rect key="frame" x="8" y="8" width="70" height="70"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="70" id="2rP-1y-Hwj"/>
@@ -34,39 +34,49 @@
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="zvl-F2-VHa"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZY-sF-Eo1" userLabel="Name">
-                                            <rect key="frame" x="101" y="16" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZY-sF-Eo1" userLabel="Name">
+                                            <rect key="frame" x="101" y="16" width="169" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="169" id="dHc-cd-qOs"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1k-ZT-Leu" userLabel="Description">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1k-ZT-Leu" userLabel="Description">
                                             <rect key="frame" x="101" y="45" width="245" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRe-nf-Jlu" userLabel="Votes count">
-                                            <rect key="frame" x="278" y="16" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRe-nf-Jlu" userLabel="Votes count">
+                                            <rect key="frame" x="290" y="16" width="40" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="oLa-rf-KID"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="M1k-ZT-Leu" firstAttribute="top" secondItem="YZY-sF-Eo1" secondAttribute="bottom" constant="8" symbolic="YES" id="0GI-tq-NLs"/>
                                         <constraint firstItem="DeG-nO-FwL" firstAttribute="leading" secondItem="4Dx-Fc-GuY" secondAttribute="leadingMargin" id="A2c-hH-TFG"/>
+                                        <constraint firstItem="gRe-nf-Jlu" firstAttribute="leading" secondItem="YZY-sF-Eo1" secondAttribute="trailing" constant="20" id="EqI-rQ-Xga"/>
+                                        <constraint firstItem="M1k-ZT-Leu" firstAttribute="leading" secondItem="DeG-nO-FwL" secondAttribute="trailing" constant="23" id="Mqd-B3-tIu"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="M1k-ZT-Leu" secondAttribute="bottom" constant="12.5" id="coI-ZN-HIB"/>
+                                        <constraint firstItem="M1k-ZT-Leu" firstAttribute="top" secondItem="gRe-nf-Jlu" secondAttribute="bottom" constant="8" symbolic="YES" id="eWm-zk-Om3"/>
                                         <constraint firstItem="DeG-nO-FwL" firstAttribute="top" secondItem="4Dx-Fc-GuY" secondAttribute="topMargin" id="lZS-Mv-HCD"/>
+                                        <constraint firstItem="M1k-ZT-Leu" firstAttribute="leading" secondItem="YZY-sF-Eo1" secondAttribute="leading" id="ppR-fJ-1hy"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="M1k-ZT-Leu" secondAttribute="trailing" constant="21" id="r7r-EC-Xf7"/>
                                         <constraint firstItem="DeG-nO-FwL" firstAttribute="centerY" secondItem="4Dx-Fc-GuY" secondAttribute="centerY" id="tpa-vh-vLm"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="description" destination="M1k-ZT-Leu" id="pOq-PT-h3w"/>
-                                    <outlet property="name" destination="YZY-sF-Eo1" id="LoG-B7-w5D"/>
-                                    <outlet property="thumbnail" destination="DeG-nO-FwL" id="kg5-YV-fzd"/>
-                                    <outlet property="votesCount" destination="gRe-nf-Jlu" id="LOn-iL-g82"/>
+                                    <outlet property="descrip" destination="M1k-ZT-Leu" id="BlE-7a-P3o"/>
+                                    <outlet property="name" destination="YZY-sF-Eo1" id="tas-o0-4J6"/>
+                                    <outlet property="thumbnail" destination="DeG-nO-FwL" id="X1O-8O-MTd"/>
+                                    <outlet property="votesCount" destination="gRe-nf-Jlu" id="RDE-j4-Mq9"/>
                                     <segue destination="mRo-uj-QrT" kind="show" id="Ca5-Ou-e9E"/>
                                 </connections>
                             </tableViewCell>
