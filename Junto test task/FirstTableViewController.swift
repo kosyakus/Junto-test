@@ -178,5 +178,15 @@ class FirstTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "f_FirstVC_t_DetailedVC" {
+            let someVar = segue.destination as! DetailedViewController
+            let cell = sender as! UITableViewCell
+            let indexPathNew = tableView.indexPath(for: cell)
+            
+            someVar.currentNews = newsDate[indexPathNew!.row]
+        }
+    }
 
 }
