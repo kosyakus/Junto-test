@@ -18,6 +18,7 @@
 		84A2E44E1F3B2FFD00C29438 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2E44D1F3B2FFD00C29438 /* News.swift */; };
 		84A2E4551F3C8D9100C29438 /* FirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2E4541F3C8D9100C29438 /* FirstTableViewCell.swift */; };
 		84A2E4571F3C943600C29438 /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2E4561F3C943600C29438 /* DetailedViewController.swift */; };
+		84A2E4591F3CEDE000C29438 /* GetItViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2E4581F3CEDE000C29438 /* GetItViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		84A2E44D1F3B2FFD00C29438 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		84A2E4541F3C8D9100C29438 /* FirstTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
 		84A2E4561F3C943600C29438 /* DetailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
+		84A2E4581F3CEDE000C29438 /* GetItViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetItViewController.swift; sourceTree = "<group>"; };
 		88063DDBB40640BA9F548727 /* Pods-Junto test task.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Junto test task.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Junto test task/Pods-Junto test task.debug.xcconfig"; sourceTree = "<group>"; };
 		CEAF444CDA05C7A6BA7EDF49 /* Pods_Junto_test_task.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Junto_test_task.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -82,11 +84,12 @@
 				84A2E4371F3B1DDE00C29438 /* AppDelegate.swift */,
 				84A2E4391F3B1DDE00C29438 /* ViewController.swift */,
 				84A2E43B1F3B1DDE00C29438 /* Main.storyboard */,
-				84A2E4561F3C943600C29438 /* DetailedViewController.swift */,
 				84A2E44D1F3B2FFD00C29438 /* News.swift */,
 				84A2E44B1F3B242C00C29438 /* Router.swift */,
 				84A2E4491F3B220F00C29438 /* FirstTableViewController.swift */,
 				84A2E4541F3C8D9100C29438 /* FirstTableViewCell.swift */,
+				84A2E4561F3C943600C29438 /* DetailedViewController.swift */,
+				84A2E4581F3CEDE000C29438 /* GetItViewController.swift */,
 				84A2E43E1F3B1DDE00C29438 /* Assets.xcassets */,
 				84A2E4401F3B1DDE00C29438 /* LaunchScreen.storyboard */,
 				84A2E4431F3B1DDE00C29438 /* Info.plist */,
@@ -226,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84A2E4591F3CEDE000C29438 /* GetItViewController.swift in Sources */,
 				84A2E4571F3C943600C29438 /* DetailedViewController.swift in Sources */,
 				84A2E4551F3C8D9100C29438 /* FirstTableViewCell.swift in Sources */,
 				84A2E44C1F3B242C00C29438 /* Router.swift in Sources */,

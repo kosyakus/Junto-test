@@ -49,5 +49,16 @@ class DetailedViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "f_DetailedVC_t_webView" {
+            let someVar = segue.destination as! GetItViewController
+            //let view = sender as! UIViewController
+            //let indexPathNew = ViewController.indexPath(for: cell)
+            if let newsUrl = currentNews?.url {
+            someVar.webNews = newsUrl
+            }
+        }
+    }
 
 }
