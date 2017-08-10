@@ -28,6 +28,8 @@ class FirstTableViewController: UITableViewController {
     
     var newsDate = [News]()
     
+    //typealias downloadNewsCompletion = () -> Void
+    
     func downloadNews() -> [News] {//news: News) -> [News] {
         
         var newsArray = [News]()
@@ -49,16 +51,16 @@ class FirstTableViewController: UITableViewController {
     private func parseNewsFromJson(rawJson: Any) -> [News] {
         let json = JSON(rawJson)
         print(json)
-        //let jsonArray = json["list"]
-        //for (_, item) in jsonArray {
+        //let jsonArray = json["posts"]
         var newsArray = [News]()
         for (_, subJson):(String, JSON) in json["posts"] {
             
             if  let addNews = News(subJson) {
                 newsArray.append(addNews)
             }
-            
-        }
+         
+         }
+      
         return newsArray
     }
 
@@ -69,6 +71,13 @@ class FirstTableViewController: UITableViewController {
 
         newsDate = downloadNews()
         tableView.reloadData()
+        
+        refresher = UIRefreshControl()
+        refresher.attributedTitle = NSAttributedString(string: "pull to refresh")
+        
+        refresher.addTarget(self, action: #selector(FirstTableViewController.refresh), for: UIControlEvents.valueChanged)
+        self.tableView.addSubview(refresher)
+        refresh()
         
        /* weatherService.downloadWeather(city: city) { [weak self] in
             self?.weatherDate = self?.weatherService.showWeather() ?? []
@@ -96,14 +105,24 @@ class FirstTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        newsDate = downloadNews()
+       // newsDate = downloadNews()
         return newsDate.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as! FirstTableViewCell
 
+        //newsDate = downloadNews()
+        let news = newsDate[indexPath.row]
+        
+        cell.name.text = news.name
+        cell.descrip.text = news.descr
+        cell.votesCount.text = String(news.upvotes)
+        
+        let imgURL:URL = URL(string: news.thumbnail)!
+        let imgData = try! Data(contentsOf: imgURL)
+        cell.thumbnail.image = UIImage(data: imgData)
         
 
         return cell

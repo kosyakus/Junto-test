@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductCell" rowHeight="87" id="xYx-ih-uY1">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductCell" rowHeight="87" id="xYx-ih-uY1" customClass="FirstTableViewCell" customModule="Junto_test_task" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="87"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xYx-ih-uY1" id="4Dx-Fc-GuY">
@@ -30,6 +30,8 @@
                                             <rect key="frame" x="8" y="8" width="70" height="70"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="70" id="2rP-1y-Hwj"/>
+                                                <constraint firstAttribute="height" constant="70" id="7Fx-AJ-BiZ"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="zvl-F2-VHa"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZY-sF-Eo1" userLabel="Name">
@@ -60,6 +62,12 @@
                                         <constraint firstItem="DeG-nO-FwL" firstAttribute="centerY" secondItem="4Dx-Fc-GuY" secondAttribute="centerY" id="tpa-vh-vLm"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="description" destination="M1k-ZT-Leu" id="pOq-PT-h3w"/>
+                                    <outlet property="name" destination="YZY-sF-Eo1" id="LoG-B7-w5D"/>
+                                    <outlet property="thumbnail" destination="DeG-nO-FwL" id="kg5-YV-fzd"/>
+                                    <outlet property="votesCount" destination="gRe-nf-Jlu" id="LOn-iL-g82"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
