@@ -67,6 +67,7 @@
                                     <outlet property="name" destination="YZY-sF-Eo1" id="LoG-B7-w5D"/>
                                     <outlet property="thumbnail" destination="DeG-nO-FwL" id="kg5-YV-fzd"/>
                                     <outlet property="votesCount" destination="gRe-nf-Jlu" id="LOn-iL-g82"/>
+                                    <segue destination="mRo-uj-QrT" kind="show" id="Ca5-Ou-e9E"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -87,6 +88,80 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AA5-lN-I2m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="293.60000000000002" y="110.19490254872565"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="viX-Bp-fbZ">
+            <objects>
+                <viewController id="mRo-uj-QrT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0l2-hS-IzB"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gix-SS-QF5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tWO-P1-6js">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aQ7-Ly-QT9">
+                                <rect key="frame" x="67" y="114" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Bzf-X0-iwZ"/>
+                                    <constraint firstAttribute="height" constant="240" id="YRQ-6g-tbM"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luo-A1-oul">
+                                <rect key="frame" x="37" y="74" width="300" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="xMb-1q-ORk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFz-Zc-NoA">
+                                <rect key="frame" x="37" y="374" width="300" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="erm-4W-4Fn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCD-mK-kbB">
+                                <rect key="frame" x="162" y="435" width="50" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="FdP-jW-Iol"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRB-4S-TRY">
+                                <rect key="frame" x="157.5" y="496" width="60" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="uMD-uy-CP8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Get it"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PRB-4S-TRY" firstAttribute="centerX" secondItem="tWO-P1-6js" secondAttribute="centerX" id="Bpc-RT-bU8"/>
+                            <constraint firstItem="yFz-Zc-NoA" firstAttribute="centerX" secondItem="tWO-P1-6js" secondAttribute="centerX" id="JpC-VZ-6Gl"/>
+                            <constraint firstItem="luo-A1-oul" firstAttribute="centerX" secondItem="tWO-P1-6js" secondAttribute="centerX" id="Oke-rK-Cl4"/>
+                            <constraint firstItem="iCD-mK-kbB" firstAttribute="centerX" secondItem="tWO-P1-6js" secondAttribute="centerX" id="OyD-9Y-sHj"/>
+                            <constraint firstItem="aQ7-Ly-QT9" firstAttribute="centerX" secondItem="tWO-P1-6js" secondAttribute="centerX" id="Ub9-vp-60F"/>
+                            <constraint firstItem="yFz-Zc-NoA" firstAttribute="top" secondItem="aQ7-Ly-QT9" secondAttribute="bottom" constant="20" id="dkS-af-bTx"/>
+                            <constraint firstItem="iCD-mK-kbB" firstAttribute="top" secondItem="yFz-Zc-NoA" secondAttribute="bottom" constant="40" id="fs0-bN-ngc"/>
+                            <constraint firstItem="PRB-4S-TRY" firstAttribute="top" secondItem="iCD-mK-kbB" secondAttribute="bottom" constant="40" id="lVR-pb-KvA"/>
+                            <constraint firstItem="aQ7-Ly-QT9" firstAttribute="top" secondItem="0l2-hS-IzB" secondAttribute="bottom" constant="50" id="m8z-NU-4bG"/>
+                            <constraint firstItem="luo-A1-oul" firstAttribute="top" secondItem="0l2-hS-IzB" secondAttribute="bottom" constant="10" id="qz3-A6-r0l"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8hA-Se-g77" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1023.2" y="111.99400299850076"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cAL-Yd-DPX">

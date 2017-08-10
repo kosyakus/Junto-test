@@ -28,9 +28,9 @@ class FirstTableViewController: UITableViewController {
     
     var newsDate = [News]()
     
-    //typealias downloadNewsCompletion = () -> Void
+    typealias downloadNewsCompletion = () -> Void
     
-    func downloadNews() -> [News] {//news: News) -> [News] {
+    func downloadNews(completion: @escaping (_ success: Bool) -> Void) -> [News] {
         
         var newsArray = [News]()
         Alamofire.request(Router.getNews(access_token: "591f99547f569b05ba7d8777e2e0824eea16c440292cce1f8dfb3952cc9937ff")).responseJSON { [weak self] response in
@@ -39,8 +39,12 @@ class FirstTableViewController: UITableViewController {
             case .success(let rawJson):
                 if let newsArrayFromJson = self?.parseNewsFromJson(rawJson: rawJson) {
                     newsArray = newsArrayFromJson
+                    //print(newsArray)
                 }
-                //completion()
+                completion(true)
+                /*DispatchQueue.main.async() {
+                    self?.tableView.reloadData()
+                }*/
             case .failure(let error):
                 print(error)
             }
@@ -50,27 +54,24 @@ class FirstTableViewController: UITableViewController {
     
     private func parseNewsFromJson(rawJson: Any) -> [News] {
         let json = JSON(rawJson)
-        print(json)
+        //print(json)
         //let jsonArray = json["posts"]
         var newsArray = [News]()
         for (_, subJson):(String, JSON) in json["posts"] {
             
             if  let addNews = News(subJson) {
                 newsArray.append(addNews)
+                //print(newsArray)
             }
          
          }
       
         return newsArray
-    }
-
-    
-
+    } 
+ 
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        newsDate = downloadNews()
-        tableView.reloadData()
         
         refresher = UIRefreshControl()
         refresher.attributedTitle = NSAttributedString(string: "pull to refresh")
@@ -79,11 +80,15 @@ class FirstTableViewController: UITableViewController {
         self.tableView.addSubview(refresher)
         refresh()
         
-       /* weatherService.downloadWeather(city: city) { [weak self] in
-            self?.weatherDate = self?.weatherService.showWeather() ?? []
-            self?.tableView.reloadData()
-        }*/
-
+        newsDate = self.downloadNews() { (success) in
+            if success {
+                DispatchQueue.main.async() {
+                    self.tableView.reloadData()
+                }
+            }
+            
+        }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -106,6 +111,7 @@ class FirstTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
        // newsDate = downloadNews()
+        print("count rows \(newsDate.count)")
         return newsDate.count
     }
 
