@@ -19,6 +19,9 @@
 		84A2E4551F3C8D9100C29438 /* FirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2E4541F3C8D9100C29438 /* FirstTableViewCell.swift */; };
 		84A2E4571F3C943600C29438 /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2E4561F3C943600C29438 /* DetailedViewController.swift */; };
 		84A2E4591F3CEDE000C29438 /* GetItViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2E4581F3CEDE000C29438 /* GetItViewController.swift */; };
+		84A2E4831F3DF41C00C29438 /* Icon-App-20x20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A2E4801F3DF41C00C29438 /* Icon-App-20x20@2x.png */; };
+		84A2E4841F3DF41C00C29438 /* Icon-App-40x40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A2E4811F3DF41C00C29438 /* Icon-App-40x40@2x.png */; };
+		84A2E4871F3DF45200C29438 /* Icon-App-60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A2E4861F3DF45200C29438 /* Icon-App-60x60@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		84A2E4541F3C8D9100C29438 /* FirstTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
 		84A2E4561F3C943600C29438 /* DetailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
 		84A2E4581F3CEDE000C29438 /* GetItViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetItViewController.swift; sourceTree = "<group>"; };
+		84A2E4801F3DF41C00C29438 /* Icon-App-20x20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-20x20@2x.png"; sourceTree = "<group>"; };
+		84A2E4811F3DF41C00C29438 /* Icon-App-40x40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-40x40@2x.png"; sourceTree = "<group>"; };
+		84A2E4861F3DF45200C29438 /* Icon-App-60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-60x60@2x.png"; sourceTree = "<group>"; };
 		88063DDBB40640BA9F548727 /* Pods-Junto test task.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Junto test task.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Junto test task/Pods-Junto test task.debug.xcconfig"; sourceTree = "<group>"; };
 		CEAF444CDA05C7A6BA7EDF49 /* Pods_Junto_test_task.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Junto_test_task.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -93,6 +99,9 @@
 				84A2E43E1F3B1DDE00C29438 /* Assets.xcassets */,
 				84A2E4401F3B1DDE00C29438 /* LaunchScreen.storyboard */,
 				84A2E4431F3B1DDE00C29438 /* Info.plist */,
+				84A2E4801F3DF41C00C29438 /* Icon-App-20x20@2x.png */,
+				84A2E4811F3DF41C00C29438 /* Icon-App-40x40@2x.png */,
+				84A2E4861F3DF45200C29438 /* Icon-App-60x60@2x.png */,
 			);
 			path = "Junto test task";
 			sourceTree = "<group>";
@@ -168,8 +177,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84A2E4841F3DF41C00C29438 /* Icon-App-40x40@2x.png in Resources */,
 				84A2E4421F3B1DDE00C29438 /* LaunchScreen.storyboard in Resources */,
 				84A2E43F1F3B1DDE00C29438 /* Assets.xcassets in Resources */,
+				84A2E4871F3DF45200C29438 /* Icon-App-60x60@2x.png in Resources */,
+				84A2E4831F3DF41C00C29438 /* Icon-App-20x20@2x.png in Resources */,
 				84A2E43D1F3B1DDE00C29438 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
