@@ -15,12 +15,12 @@ enum Router: URLRequestConvertible {
         return "https://api.producthunt.com"
     }
     
-    case getNews(access_token: String)
+    case getNews(search: String, access_token: String)
     
     private var path: String {
         switch self {
         case .getNews:
-            return "/v1/posts"
+            return "/v1/posts/all/"
         }
     }
     
@@ -33,8 +33,8 @@ enum Router: URLRequestConvertible {
     
     private var parameters: Parameters {
         switch self {
-        case let .getNews(access_token):
-            return ["access_token": access_token]
+        case let .getNews(search, access_token):
+            return ["search[category]": search, "access_token": access_token]
         }
     }
     

@@ -28,16 +28,16 @@ class FirstTableViewController: UITableViewController {
 
     
     var newsDate = [News]()
-    let dropper = Dropper(width: 200, height: 300)
+    let dropper = Dropper(width: 150, height: 300)
     
     @IBOutlet weak var dropdown: UIButton!
     
     typealias downloadNewsCompletion = () -> Void
     
-    func downloadNews(completion: @escaping (_ success: Bool) -> Void) {
+    func downloadNews(category: String, completion: @escaping (_ success: Bool) -> Void) {
         
         //var newsArray = [News]()
-        Alamofire.request(Router.getNews(access_token: "591f99547f569b05ba7d8777e2e0824eea16c440292cce1f8dfb3952cc9937ff")).responseJSON { [weak self] response in
+        Alamofire.request(Router.getNews(search: category, access_token: "591f99547f569b05ba7d8777e2e0824eea16c440292cce1f8dfb3952cc9937ff")).responseJSON { [weak self] response in
             
             switch response.result {
             case .success(let rawJson):
@@ -83,7 +83,7 @@ class FirstTableViewController: UITableViewController {
         self.tableView.addSubview(refresher)
         refresh()
         
-        self.downloadNews() { (success) in
+        self.downloadNews(category: "tech") { (success) in
             if success {
                 DispatchQueue.main.async() {
                     self.tableView.reloadData()
@@ -220,5 +220,14 @@ class FirstTableViewController: UITableViewController {
 extension FirstTableViewController: DropperDelegate {
     func DropperSelectedRow(_ path: IndexPath, contents: String) {
         self.title = "\(contents)"
+        let newCategory = String(contents).lowercased()
+        self.downloadNews(category: newCategory) { (success) in
+            if success {
+                DispatchQueue.main.async() {
+                    self.tableView.reloadData()
+                }
+            }
+            
+        }
     }
 }
