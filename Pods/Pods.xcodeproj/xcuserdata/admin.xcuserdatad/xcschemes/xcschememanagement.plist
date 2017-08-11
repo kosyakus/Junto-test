@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Dropper.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Junto test task.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,17 +37,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4425A3080D63AFD9C7E5416311CECFE1</key>
+		<key>2AA1475B5EDD71A8C27F9CE580B27B39</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4C87843D5FDCC0C6D0CEECB34F1E3E32</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>611B440CEEA6BF7D559761159AF5CAEF</key>
+		<key>35753FFAC94E4E30249C261EB4F29321</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,7 +52,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CDC3D2B0C26958BCB1E8FCB9DB3273BD</key>
+		<key>E3AD41DDEF2C12E83A534F7DE1EAD0E3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E6D05DF085E67167BD9776D0AED4BB99</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EF18BDBB295EACA72F86BC8C737575CC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

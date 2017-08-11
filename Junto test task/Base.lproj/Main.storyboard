@@ -164,7 +164,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Get it"/>
                                 <connections>
-                                    <segue destination="aFf-rB-i0T" kind="show" identifier="f_DetailedVC_t_webView" id="DaI-vQ-WEn"/>
+                                    <action selector="getIt:" destination="mRo-uj-QrT" eventType="touchUpInside" id="ULT-4z-Qy2"/>
                                 </connections>
                             </button>
                         </subviews>

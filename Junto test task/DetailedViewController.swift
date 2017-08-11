@@ -50,7 +50,7 @@ class DetailedViewController: UIViewController {
     }
     */
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ /*   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "f_DetailedVC_t_webView" {
             let someVar = segue.destination as! GetItViewController
             //let view = sender as! UIViewController
@@ -59,6 +59,15 @@ class DetailedViewController: UIViewController {
             someVar.webNews = newsUrl
             }
         }
+    }*/
+    
+    @IBAction func getIt(_ sender: Any) {
+        if let newsUrl = currentNews?.url {
+            let url = URL(string: newsUrl)!
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+        //NSString *path = @"http://www.youtube.com/watch?v=Xp697DqsbUU";
+        //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:path]];
     }
 
 }
