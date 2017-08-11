@@ -30,6 +30,8 @@ class GetItViewController: UIViewController {
             DispatchQueue.global().async {
                 self.webView.loadRequest(request)
             }
+        } else {
+            print("no web")
         }
         // Dispose of any resources that can be recreated.
     }
