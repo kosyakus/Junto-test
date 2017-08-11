@@ -178,13 +178,21 @@
                                     <action selector="getIt:" destination="mRo-uj-QrT" eventType="touchUpInside" id="ULT-4z-Qy2"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upvotes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGO-gd-vj8">
+                                <rect key="frame" x="153" y="443" width="69" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="iCD-mK-kbB" firstAttribute="top" secondItem="AGO-gd-vj8" secondAttribute="bottom" constant="10" id="9BA-3C-mx3"/>
                             <constraint firstItem="PRB-4S-TRY" firstAttribute="centerX" secondItem="tWO-P1-6js" secondAttribute="centerX" id="Bpc-RT-bU8"/>
                             <constraint firstItem="yFz-Zc-NoA" firstAttribute="centerX" secondItem="tWO-P1-6js" secondAttribute="centerX" id="JpC-VZ-6Gl"/>
                             <constraint firstItem="luo-A1-oul" firstAttribute="centerX" secondItem="tWO-P1-6js" secondAttribute="centerX" id="Oke-rK-Cl4"/>
                             <constraint firstItem="iCD-mK-kbB" firstAttribute="centerX" secondItem="tWO-P1-6js" secondAttribute="centerX" id="OyD-9Y-sHj"/>
+                            <constraint firstItem="AGO-gd-vj8" firstAttribute="centerX" secondItem="tWO-P1-6js" secondAttribute="centerX" id="R97-KK-DXk"/>
                             <constraint firstItem="aQ7-Ly-QT9" firstAttribute="centerX" secondItem="tWO-P1-6js" secondAttribute="centerX" id="Ub9-vp-60F"/>
                             <constraint firstItem="yFz-Zc-NoA" firstAttribute="top" secondItem="aQ7-Ly-QT9" secondAttribute="bottom" constant="20" id="dkS-af-bTx"/>
                             <constraint firstItem="iCD-mK-kbB" firstAttribute="top" secondItem="yFz-Zc-NoA" secondAttribute="bottom" constant="40" id="fs0-bN-ngc"/>
