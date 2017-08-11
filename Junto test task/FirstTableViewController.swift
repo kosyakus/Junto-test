@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Dropper
 
 class FirstTableViewController: UITableViewController {
     
@@ -27,6 +28,9 @@ class FirstTableViewController: UITableViewController {
 
     
     var newsDate = [News]()
+    let dropper = Dropper(width: 200, height: 300)
+    
+    @IBOutlet weak var dropdown: UIButton!
     
     typealias downloadNewsCompletion = () -> Void
     
@@ -87,6 +91,8 @@ class FirstTableViewController: UITableViewController {
             }
             
         }
+        
+        self.title = "Tech"
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -179,6 +185,26 @@ class FirstTableViewController: UITableViewController {
     }
     */
     
+    @IBAction func DropdownAction() {
+        if dropper.status == .hidden {
+            dropper.items = ["Tech", "Games", "Books", "Artificial Intelligence", "Developer Tools", "Home", "Productivity", "Touch Bar Apps", "Wearables"]
+            dropper.theme = Dropper.Themes.white
+            dropper.delegate = self
+            dropper.cornerRadius = 3
+            dropper.showWithAnimation(0.15, options: .center, position: .bottom, button: dropdown)
+            view.addSubview(dropper)
+            print("DROOOOOP")
+        } else {
+            dropper.hideWithAnimation(0.1)
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if (dropper.isHidden == false) { // Checks if Dropper is visible
+            dropper.hideWithAnimation(0.1) // Hides Dropper
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "f_FirstVC_t_DetailedVC" {
             let someVar = segue.destination as! DetailedViewController
@@ -189,4 +215,10 @@ class FirstTableViewController: UITableViewController {
         }
     }
 
+}
+
+extension FirstTableViewController: DropperDelegate {
+    func DropperSelectedRow(_ path: IndexPath, contents: String) {
+        self.title = "\(contents)"
+    }
 }
