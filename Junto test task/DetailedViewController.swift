@@ -60,7 +60,8 @@ class DetailedViewController: UIViewController {
             }
         }
     }*/
-    
+
+// GET IT button
     @IBAction func getIt(_ sender: Any) {
         if let newsUrl = currentNews?.url {
             let url = URL(string: newsUrl)!

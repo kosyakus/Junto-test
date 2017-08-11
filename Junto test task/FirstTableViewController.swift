@@ -13,6 +13,7 @@ import Dropper
 
 class FirstTableViewController: UITableViewController {
     
+ // creating refresher
     var refresher: UIRefreshControl!
     
     func refresh(){
@@ -26,12 +27,14 @@ class FirstTableViewController: UITableViewController {
         
     }
 
-    
     var newsDate = [News]()
+    
+// creating variable for drop-down list
     let dropper = Dropper(width: 150, height: 300)
     
     @IBOutlet weak var dropdown: UIButton!
     
+// functions for parsing json
     typealias downloadNewsCompletion = () -> Void
     
     func downloadNews(category: String, completion: @escaping (_ success: Bool) -> Void) {
@@ -72,7 +75,7 @@ class FirstTableViewController: UITableViewController {
         return newsArray
     } 
  
- 
+// Configuring TVC
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -184,7 +187,8 @@ class FirstTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
+  
+// functions for drop-down list
     @IBAction func DropdownAction() {
         if dropper.status == .hidden {
             dropper.items = ["Tech", "Games", "Books", "Artificial Intelligence", "Developer Tools", "Home", "Productivity", "Touch Bar Apps", "Wearables"]
@@ -204,7 +208,8 @@ class FirstTableViewController: UITableViewController {
             dropper.hideWithAnimation(0.1) // Hides Dropper
         }
     }
-    
+
+// Segue for the Second controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "f_FirstVC_t_DetailedVC" {
             let someVar = segue.destination as! DetailedViewController
@@ -217,6 +222,7 @@ class FirstTableViewController: UITableViewController {
 
 }
 
+// extention for drop-down list
 extension FirstTableViewController: DropperDelegate {
     func DropperSelectedRow(_ path: IndexPath, contents: String) {
         self.title = "\(contents)"

@@ -20,7 +20,7 @@ enum Router: URLRequestConvertible {
     private var path: String {
         switch self {
         case .getNews:
-            return "/v1/posts/all/"
+            return "/v1/posts/"
         }
     }
     
